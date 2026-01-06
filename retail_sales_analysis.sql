@@ -1,3 +1,4 @@
+-- **Creating And using Reail sales database**
 use retail_sales_database;
 create table retail_sales
 (
@@ -14,7 +15,7 @@ cogs float,
 total_sale float
 );
 select * from retail_sales;
-# to find null values in transactions_id column
+-- **To find any null values in each column**
 select * from retail_sales where transactions_id is null;
 select * from retail_sales where transactions_id is null or 
 sale_time is null
@@ -24,19 +25,19 @@ or category is null
 or quantity is null
 or cogs is null
 or total_sale is null;
--- Data exploration
+--** Data exploration**
 -- How many sales we have?
 select count(*) as total_sales from retail_sales;
-# How many unique customers we have?
+--  How many unique customers we have?
 select count(distinct customer_id) as total_sales from retail_sales;
-# How many unique category we have?
+-- How many unique category we have?
 select count(distinct category) as total_sales from retail_sales;
-# retrieve unique customer ids in table
+-- retrieve unique customer ids in table
 select distinct customer_id from retail_sales;
-# retrieve unique category names in table
+-- retrieve unique category names in table
 select distinct category from retail_sales;
-#Data Analysis & Buisiness key problems and answers
--- Analysis and findings
+--**Data Analysis & Buisiness key problems and answers**
+--** Analysis and findings**
 -- Q.1 write sql query to retrieve all sales made on '2022-11-05'
 select * from retail_sales where sale_date='2022-11-05';
 -- Q.2 write sql query to retrieve all transactions where category is clothing  and the quantity sold is more than 3 in the month of nov-2022
